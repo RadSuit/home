@@ -276,7 +276,7 @@
 
    (gimp-image-add-layer img bg-layer -1)
    (gimp-image-set-active-layer img bg-layer)
-   (gimp-edit-fill bg-layer WHITE-IMAGE-FILL)
+   (gimp-edit-fill bg-layer FILL-WHITE)
   (if  (= opmode  0)
        (begin
        (gimp-image-add-layer img grey-layer -1)
@@ -380,13 +380,13 @@
    (gimp-image-add-layer img black-layer -1)
    (gimp-image-set-active-layer img black-layer)
    (gimp-context-set-background '(0 0 0))
-   (gimp-edit-fill black-layer BG-IMAGE-FILL)                          ; Black Line Art
+   (gimp-edit-fill black-layer FILL-BACKGROUND)                          ; Black Line Art
    (gimp-layer-set-mode black-layer COLOR-MODE)            ; Color Layer Mode
 
    (gimp-image-add-layer img color-layer -1)
    (gimp-image-set-active-layer img color-layer)
    (gimp-context-set-foreground art-color)
-   (gimp-edit-fill color-layer FG-IMAGE-FILL)                           ; Color Line Art
+   (gimp-edit-fill color-layer FILL-FOREGROUND)                           ; Color Line Art
    (gimp-layer-set-mode color-layer COLOR-MODE)            ; Color Layer Mode
 
   (if  (eqv? polychrome? TRUE)
